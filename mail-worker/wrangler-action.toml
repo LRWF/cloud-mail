@@ -2,9 +2,11 @@ name = "cloud-mail"
 main = "src/index.js"
 compatibility_date = "2025-06-04"
 
+workers_dev = false
+preview_urls = false
 
 [observability]
-enabled = true
+enabled = false
 
 [[d1_databases]]
 binding = "db"
@@ -28,6 +30,8 @@ run_worker_first = true
 [triggers]
 crons = ["0 16 * * *"]	#定时任务每天晚上12点执行
 
+[placement]
+mode = "smart"
 
 [vars]
 #orm_log = false
